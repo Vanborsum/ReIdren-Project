@@ -1,0 +1,110 @@
+<div class="tabs-container">
+  <button class="tab-btn" id="tab-1" onclick="tabOneClick()">
+    Van Tours
+  </button>
+  <button class="tab-btn" id="tab-2" onclick="tabTwoClick()">
+    Walking Tours
+  </button>
+  <button class="tab-btn" id="tab-3" onclick="tabThreeClick()">
+    Presentations
+  </button>
+  <button class="tab-btn" id="tab-4" onclick="tabFourClick()">
+    Other
+  </button>
+</div>
+
+
+<!--Be sure jQuery is loaded on your site.-->
+<script>
+  function tabFromURL() {
+    var urlRoot = window.location.hash.substring(1);
+    switch (urlRoot.toLowerCase()) {
+      case ('van'):
+        tabOneClick();
+        break;
+      case ('walking'):
+        tabTwoClick();
+        break;
+      case('presentation'):
+        tabThreeClick();
+        break;
+      case('other'):
+        tabFourClick();
+        break;
+      default:
+        tabOneClick;
+        break;
+    }
+  }
+
+  function tabOneClick() {
+    $('button.tab-btn:nth-of-type(1)').addClass("active");
+    $('button.tab-btn:nth-of-type(2)').removeClass("active");
+    $('button.tab-btn:nth-of-type(3)').removeClass("active");
+    $('button.tab-btn:nth-of-type(4)').removeClass("active");
+
+    $('[id="block-6bd4ef06daf0c3313843"]').removeClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1727300544930_136196"]').addClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1727300544930_198885"]').addClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1727384906018_178055"]').addClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1728072525603_60488"]').addClass("block-hide");
+    window.Squarespace.initializeLayoutBlocks(Y);
+    window.dispatchEvent(new Event('resize'))
+  }
+
+
+  function tabTwoClick() {
+    $('button.tab-btn:nth-of-type(1)').removeClass("active");
+    $('button.tab-btn:nth-of-type(2)').addClass("active");
+    $('button.tab-btn:nth-of-type(3)').removeClass("active");
+    $('button.tab-btn:nth-of-type(4)').removeClass("active");
+
+    $('[id="block-6bd4ef06daf0c3313843"]').addClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1727300544930_136196"]').removeClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1727300544930_198885"]').addClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1727384906018_178055"]').addClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1728072525603_60488"]').addClass("block-hide");
+    window.Squarespace.initializeLayoutBlocks(Y);
+    window.dispatchEvent(new Event('resize'))
+  }
+
+
+  function tabThreeClick() {
+    $('button.tab-btn:nth-of-type(1)').removeClass("active");
+    $('button.tab-btn:nth-of-type(2)').removeClass("active");
+    $('button.tab-btn:nth-of-type(3)').addClass("active");
+    $('button.tab-btn:nth-of-type(4)').removeClass("active");
+
+    $('[id="block-6bd4ef06daf0c3313843"]').addClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1727300544930_136196"]').addClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1727300544930_198885"]').removeClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1727384906018_178055"]').addClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1728072525603_60488"]').addClass("block-hide");
+    window.Squarespace.initializeLayoutBlocks(Y);
+    window.dispatchEvent(new Event('resize'))
+  }
+
+  function tabFourClick() {
+    $('button.tab-btn:nth-of-type(1)').removeClass("active");
+    $('button.tab-btn:nth-of-type(2)').removeClass("active");
+    $('button.tab-btn:nth-of-type(3)').removeClass("active");
+    $('button.tab-btn:nth-of-type(4)').addClass("active");
+
+    $('[id="block-6bd4ef06daf0c3313843"]').addClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1727300544930_136196"]').addClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1727300544930_198885"]').addClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1727384906018_178055"]').removeClass("block-hide");
+    $('[id="block-yui_3_17_2_1_1728072525603_60488"]').removeClass("block-hide");
+    window.Squarespace.initializeLayoutBlocks(Y);
+    window.dispatchEvent(new Event('resize'))
+  }
+
+
+  $(function() {
+    $('[data-section-id="Section-1"]').addClass("tab-section-hide");
+    $('[data-section-id="Section-2"]').addClass("tab-section-hide");
+    $('[data-section-id="Section-3"]').addClass("tab-section-hide");
+    tabOneClick();
+    tabFromURL();
+  });
+</script>
