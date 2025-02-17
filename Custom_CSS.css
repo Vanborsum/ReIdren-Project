@@ -1,0 +1,55 @@
+.collection-type-index .page-content {
+    padding: 46px 32px;
+}
+
+.tabs-container {
+    transform: translateY(30%);
+    width: 100% !important;
+    text-align: center;
+    border-bottom: 1px solid #999;
+    overflow: auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    z-index: 99;
+}
+
+.tab-btn {
+    max-width: 220px;
+    display: inline-block;
+    border-radius: 3px 3px 0 0;
+    padding: 12px 18px;
+    font-size: 1.2em;
+    background: white;
+    margin-bottom: none !important;
+    border: 1px solid #ccc; /* Thinner border */
+    border-bottom: none; /* No bottom border */
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Adds space between non-first buttons */
+.tab-btn:not(:first-of-type) {
+    margin-left: 10px;
+}
+
+/* Active button style */
+.tab-btn.active {
+    background: lightblue;
+    border-color: lightblue; /* Match border color with background when active */
+    border-bottom: none; /* Ensure no bottom border when active */
+}
+
+/* Hover effect */
+.tab-btn:hover {
+    background-color: #ddd;    /* Change background on hover */
+    border-color: #666;        /* Change border color on hover */
+    border-bottom: none;       /* Ensure no bottom border on hover */
+}
+
+.block-hide {
+    display: none !important;
+}
+
+.block-show {
+    display: flex !important;
+}
